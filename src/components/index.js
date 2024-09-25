@@ -1,0 +1,7 @@
+export {default as Start} from './sidebar-components/Start'
+export {default as Gear} from './sidebar-components/Gear'
+export {default as Aspects} from './sidebar-components/Aspects'
+export {default as Calibers} from './sidebar-components/Calibers'
+export {default as PrimaryStats} from './sidebar-components/PrimaryStats'
+export {default as Summary} from './sidebar-components/Summary'
+export {default as Origin} from './sidebar-components/Origin'

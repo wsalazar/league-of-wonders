@@ -1,0 +1,328 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  /* display: flex; */
+  place-items: center;
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* aside {
+    display: flex;
+    flex-direction: column;
+    width: var(--sibebar-width);
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: var(--dark);
+    color: var(--light);
+    transition: 0.2s ease-out;
+    background-color: rgb(240,179,158);
+
+    @media (max-width: 768px) {
+        position: fixed;
+        z-index: 99;
+    }
+}
+
+aside {
+    a {
+        margin-bottom: 2rem;
+    }
+} */
+
+.parent {
+  /* background-color: blue; */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  /* background-color: red; */
+  height: 100%;
+  width: 25%;
+}
+
+.content {
+  /* background-color: green; */
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* justify-content: flex-end; */
+}
+.cards {
+  width: 100%;
+  background-color: red;
+  height: 30%;
+  overflow: scroll hidden;
+}
+.overflow {
+  width: 150%;
+  height: 100%;
+  background-color: orange;
+}
+
+.custom-list {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.custom-list li {
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-transform: uppercase;
+}
+
+.origin-container {
+  margin-bottom: 1rem;
+}
+
+.origin-text {
+  width: 10rem;
+  border-radius: 4rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+.origin-layout,
+.caliber-layout {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.origin-buttons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.origin-table {
+  flex: 1;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+}
+/* 
+.caliber-list {
+  width: 13rem;
+  height: 26rem;
+  overflow-x: hidden;
+  margin-bottom: 10rem;
+} */
+
+.caliber-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.caliber-label input[type='checkbox'] {
+  margin-right: 5px;
+}
+
+.caliber-text {
+  font-size: 14px;
+}
+
+.caliber-list-container {
+  height: 200px; /* Adjust this value to set the desired height */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 10rem;
+}
+
+.caliber-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calibers {
+  display: flex;
+  align-items: center;
+}
+
+.caliber-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.caliber-checkbox {
+  margin-right: 10px;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.caliber-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.caliber-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.caliber-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.tab:focus,
+.tab:focus-visible {
+  outline: 0;
+}
+
+/* For Firefox */
+.caliber-list-container {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.caliber-details {
+  margin-left: 10rem;
+  width: 40rem;
+}
+
+.caliber-textarea {
+  width: 100%; /* Takes full width of its container */
+  height: 200px; /* Sets a fixed height, adjust as needed */
+  padding: 10px;
+  resize: vertical; /* Allows vertical resizing */
+  box-sizing: border-box; /* Includes padding in width/height calculation */
+}
+
+.tab {
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.tab.active {
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  background: #efe13f;
+  color: black;
+  border-bottom-left-radius: initial;
+  border-bottom-right-radius: initial;
+}
+
+.tab-content {
+  position: relative;
+  height: 200px;
+}
+
+.caliber-textarea {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.empty-textarea {
+  width: 40%;
+  height: 30%;
+  padding: 3px;
+  box-sizing: border-box;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+
+.caliber-textarea.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.caliber-count {
+  background-color: #eead67;
+  padding: 10px;
+  border-radius: 5rem;
+  color: black;
+}
