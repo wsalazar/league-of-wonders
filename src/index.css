@@ -326,3 +326,33 @@ th {
   border-radius: 5rem;
   color: black;
 }
+
+.aspect-container-header {
+  display: flex;
+  background-color: #eead67;
+  padding: 10px;
+}
+
+legend.aspect-text {
+  margin-right: 1rem;
+}
+
+select.aspect-select {
+  width: 4rem;
+}
+
+p.aspect-details {
+  width: 13rem;
+}
+
+.aspect-container {
+  min-width: 200px;
+  flex: 1 1 calc(33.333% - 1rem);
+  min-width: 200px;
+  background-color: #52aab1;
+}
+.aspects-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

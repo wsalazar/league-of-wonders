@@ -175,3 +175,42 @@ export const calibers = [
     details: 'Wrestlers are trained in the art of Strikes, throws, and holds.',
   },
 ]
+
+export const aspects = [
+  {
+    id: 1,
+    text: 'STRENGTH',
+    details:
+      'Determines how much weight can be lifted and effectiveness of Strength based abilities.',
+  },
+  {
+    id: 2,
+    text: 'IMPULSE',
+    details:
+      'Determines the speed of the hero and effectiveness of Impulse based abilities.',
+  },
+  {
+    id: 3,
+    text: 'MIND',
+    details:
+      'Determines how intelligent the hero is and the effectiveness of Mind based abilities',
+  },
+  {
+    id: 4,
+    text: 'PRESENCE',
+    details:
+      'Determines how beautiful and persuasive your hero is and the effectiveness of Presence Abilities.',
+  },
+  {
+    id: 5,
+    text: 'LUCK',
+    details:
+      'Determines the effectiveness of critical hits and Luck based abilities.',
+  },
+  {
+    id: 6,
+    text: 'ENDURANCE',
+    details:
+      'Determines a heroes survivability, toughness, and effectiveness of Endurance based abilities.',
+  },
+]
