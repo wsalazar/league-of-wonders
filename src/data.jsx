@@ -214,3 +214,21 @@ export const aspects = [
       'Determines a heroes survivability, toughness, and effectiveness of Endurance based abilities.',
   },
 ]
+
+export const primaryStats = [
+  {
+    id: 1,
+    text: 'RESILIENCE',
+    details: 'RESILIENCE = Level x 15',
+  },
+  {
+    id: 2,
+    text: 'LIFE',
+    details: 'LIFE = ENDURANCE + 10',
+  },
+  {
+    id: 3,
+    text: 'MOVEMENT',
+    details: 'MOVEMENT Spaces = IMPULSE + 5',
+  },
+]

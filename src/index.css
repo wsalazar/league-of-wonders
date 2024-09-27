@@ -351,8 +351,37 @@ p.aspect-details {
   min-width: 200px;
   background-color: #52aab1;
 }
-.aspects-layout {
+.aspects-layout,
+.primary-stats-layout,
+.primary-stats-values-layout {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.primary-stats-container {
+  min-width: 200px;
+  flex: 1 1 calc(33.333% - 1rem);
+  min-height: 150px;
+  background-color: black;
+  margin-bottom: 5rem;
+}
+
+.primary-stats-values-container {
+  background-color: #d39884;
+  padding: 10px;
+  border-radius: 5rem;
+  width: 10rem;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.primary-stats-container-header {
+  display: flex;
+  background-color: #52aab1;
+  padding: 10px;
+}
+
+.primary-stats-values-details {
+  text-align: center;
 }
