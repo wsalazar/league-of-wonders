@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #52aab1;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -101,8 +105,8 @@ aside {
 
 nav {
   /* background-color: red; */
-  height: 100%;
-  width: 25%;
+  /* height: 100%; */
+  /* width: 25%; */
 }
 
 .content {
@@ -151,6 +155,7 @@ nav {
 table {
   border-collapse: collapse;
   width: 100%;
+  border: 1px solid white;
 }
 
 th,
@@ -162,7 +167,7 @@ td {
 th {
   font-weight: bold;
 }
-
+/* 
 .origin-layout,
 .caliber-layout {
   display: flex;
@@ -185,13 +190,6 @@ th {
   display: flex;
   justify-content: space-between;
 }
-/* 
-.caliber-list {
-  width: 13rem;
-  height: 26rem;
-  overflow-x: hidden;
-  margin-bottom: 10rem;
-} */
 
 .caliber-label {
   display: flex;
@@ -208,7 +206,7 @@ th {
 }
 
 .caliber-list-container {
-  height: 200px; /* Adjust this value to set the desired height */
+  height: 200px; 
   overflow-y: auto;
   border: 1px solid #ccc;
   padding: 10px;
@@ -238,7 +236,7 @@ th {
 }
 
 /* For WebKit browsers (Chrome, Safari) */
-.caliber-list-container::-webkit-scrollbar {
+/* .caliber-list-container::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -256,7 +254,7 @@ th {
 }
 
 /* For Firefox */
-.caliber-list-container {
+/* .caliber-list-container {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
 }
@@ -267,13 +265,13 @@ th {
 }
 
 .caliber-textarea {
-  width: 100%; /* Takes full width of its container */
-  height: 200px; /* Sets a fixed height, adjust as needed */
+  width: 100%;
+  height: 200px;
   padding: 10px;
-  resize: vertical; /* Allows vertical resizing */
-  box-sizing: border-box; /* Includes padding in width/height calculation */
-}
-
+  resize: vertical;
+  box-sizing: border-box;
+} */
+/* 
 .tab {
   padding: 10px 15px;
   border: none;
@@ -365,6 +363,7 @@ p.aspect-details {
   min-height: 150px;
   background-color: black;
   margin-bottom: 5rem;
+  margin: auto auto 5rem auto;
 }
 
 .primary-stats-values-container {
@@ -385,3 +384,29 @@ p.aspect-details {
 .primary-stats-values-details {
   text-align: center;
 }
+
+.weapons-layout,
+.armour-layout,
+.gadget-layout {
+  display: flex;
+}
+
+.weapons-container,
+.armour-container,
+.gadget-container {
+  width: 30%;
+  margin-right: 5rem;
+  margin: auto;
+}
+
+.bordered-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.bordered-table th,
+.bordered-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+} */

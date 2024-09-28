@@ -26,11 +26,26 @@ export const navigation = [
   },
   {
     id: 6,
+    url: '/weapons',
+    text: 'Weapons',
+  },
+  {
+    id: 7,
+    url: '/armour',
+    text: 'Armour',
+  },
+  {
+    id: 8,
+    url: '/gadget',
+    text: 'Gadget',
+  },
+  {
+    id: 9,
     url: '/gear',
     text: 'Gear',
   },
   {
-    id: 7,
+    id: 10,
     url: '/summary',
     text: 'Summary',
   },
@@ -230,5 +245,178 @@ export const primaryStats = [
     id: 3,
     text: 'MOVEMENT',
     details: 'MOVEMENT Spaces = IMPULSE + 5',
+  },
+]
+
+export const weapons = [
+  {
+    id: 1,
+    weapon: 'Saber',
+    hand: 'One',
+    weight: 'Light',
+    effect: 'Strength Dice Slashing damage.',
+    hit: 'Strength',
+    range: 'Adjacent',
+  },
+  {
+    id: 2,
+    weapon: 'Dagger',
+    hand: 'One',
+    weight: 'Light',
+    effect: 'Impulse Dice Piercing damage.',
+    hit: 'Impulse',
+    range: 'Adjacent',
+  },
+  {
+    id: 3,
+    weapon: 'Knuckles',
+    hand: 'One',
+    weight: 'Light',
+    effect: 'Strength Dice Bludgeoning damage.',
+    hit: 'Strength',
+    range: 'Adjacent',
+  },
+  {
+    id: 4,
+    weapon: 'Hand Crossbow',
+    hand: 'One',
+    weight: 'Heavy',
+    effect: 'Impulse Dice Piercing damage.',
+    hit: 'Impulse',
+    range: 'Adjacent',
+  },
+  {
+    id: 5,
+    weapon: 'Crossbow',
+    hand: 'Two',
+    weight: 'Heavy',
+    effect: '2 + Impulse Dice Piercing damage.',
+    hit: 'Impulse',
+    range: 'Nearby',
+  },
+  {
+    id: 6,
+    weapon: 'Staff',
+    hand: 'Two',
+    weight: 'Heavy',
+    effect: '2 + Strength Dice Bludgeoning damage.',
+    hit: 'Strength',
+    range: 'Adjacent',
+  },
+  {
+    id: 7,
+    weapon: 'Longsword',
+    hand: 'Two',
+    weight: 'Heavy',
+    effect: '4 + Strength Dice Slashing damage.',
+    hit: 'Strength',
+    range: 'Nearby',
+  },
+  {
+    id: 8,
+    weapon: 'Longbow',
+    hand: 'Two',
+    weight: 'Heavy',
+    effect: '4 + Impulse Dice Piercing damage.',
+    hit: 'Impulse',
+    range: 'Far',
+  },
+  {
+    id: 9,
+    weapon: 'Sphere',
+    hand: 'One',
+    weight: 'Heavy',
+    effect: '4 + Impulse Dice Bludgeoning damage.',
+    hit: 'Strength',
+    range: 'Far',
+  },
+  {
+    id: 10,
+    weapon: 'Chakram',
+    hand: 'One',
+    weight: 'Light',
+    effect: '4 + Impulse Dice Slashing damage.',
+    hit: 'Impulse',
+    range: 'Far',
+  },
+  {
+    id: 11,
+    weapon: 'Sling',
+    hand: 'Two',
+    weight: 'Light',
+    effect: '2 + Strength Dice Bludgeoning damage.',
+    hit: 'Impulse',
+    range: 'Far',
+  },
+]
+
+export const armours = [
+  {
+    id: 1,
+    armour: 'Leather Mask',
+    slot: 'Head',
+    weight: 'Light',
+    effect: 'Reduces damage taken from critical hits by 6.',
+  },
+  {
+    id: 2,
+    armour: 'Hooded Cloak',
+    slot: 'Outerwear',
+    weight: 'Light',
+    effect: 'Reduces Bludgeoning, Piercing, and Slashing damage by 3.',
+  },
+  {
+    id: 3,
+    armour: 'Armoured Cloak',
+    slot: 'Outerwear',
+    weight: 'Light',
+    effect:
+      'Reduces Bludgeoning, Piercing, and Slashing damage by 5. While equipped, your speed is halved (Round Down, minimum 1).',
+  },
+  {
+    id: 4,
+    armour: 'Spandex Suit',
+    slot: 'Outerwear',
+    weight: 'Light',
+    effect: 'Reduces Fire, Electric, and Universal Damage by 3.',
+  },
+  {
+    id: 5,
+    armour: 'Buckler',
+    slot: 'One Hand',
+    weight: 'Light',
+    effect:
+      'Your shield has a defense of 1. When wielded, reduce damage taken by 1. Note: You do not gain the benefit of this Buckler if you have a 2 handed weapon in your possession.',
+  },
+]
+
+export const gadgets = [
+  {
+    id: 1,
+    gadget: 'Medicine Kit',
+    slot: 'Utility',
+    effect:
+      'Restores 1d10 Life to a target. This item has a total of 3uses before it breaks. Range: Adjacent; Action: Instant',
+  },
+  {
+    id: 2,
+    gadget: 'Grappling Hook',
+    slot: 'Utility',
+    effect:
+      'Fire a grappling hook and line to a panel to pull yourself to that panel. This item can be used 3 times before breaking. Range: Far; Action: Instant',
+  },
+  {
+    id: 3,
+    gadget: 'Smoke Bomb',
+    slot: 'Utility',
+    effect:
+      'You obscure the panel you are on, inflicting a bane on all attacks made on and to that panel. After use the item breaks. Action: Instant',
+  },
+  {
+    id: 4,
+    gadget: 'Low Power Grenade',
+    slot: 'Utility',
+    effect:
+      'You throw a low powered grenade that deals 5 fire damage to all those on a nearby panel of your choice. Once used, this item is destroyed. Hit: IMPULSE; Range: Nearby; Action: Instant',
   },
 ]

@@ -1,51 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
-// import {
-//   Start,
-//   Aspects,
-//   Calibers,
-//   Gear,
-//   PrimaryStats,
-//   Summary
-//  } from './components'
+import {
+  Start,
+  Aspects,
+  Calibers,
+  Gear,
+  PrimaryStats,
+  Weapons,
+  Gadget,
+  Origin,
+  Summary,
+  Armour,
+} from './components'
 
-// import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />,
+    children: [
+      { index: true, element: <Start /> },
+      { path: 'calibers', element: <Calibers /> },
+      { path: 'aspects', element: <Aspects /> },
+      { path: 'gear', element: <Gear /> },
+      { path: 'primary-stats', element: <PrimaryStats /> },
+      { path: 'weapons', element: <Weapons /> },
+      { path: 'armour', element: <Armour /> },
+      { path: 'gadget', element: <Gadget /> },
+      { path: 'summary', element: <Summary /> },
+      { path: 'origin', element: <Origin /> },
+    ],
+  },
+])
 
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Start />
-//   }
-//   ,{
-//     path: '/calibers',
-//     element: <Calibers />
-//   },{
-//     path: '/aspects',
-//     element: <Aspects />
-//   },{
-//     path: '/gear',
-//     element: <Gear />
-//   },{
-//     path: '/primary-stats',
-//     element: <PrimaryStats />
-//   },{
-//     path: '/summary',
-//     element: <Summary />
-//   }
-// ])
-
-function App() {
-
-
+function Root() {
   return (
-    <div className="parent">
-    <Sidebar />
+    <div className='flex'>
+      <Sidebar />
+      <main className='p-4 w-4/5 flex-none'>
+        <div className='p-4 bg-orange-100 rounded-xl h-screen text-neutral-950  '>
+          <div className=' h-full'>
+            <Outlet />
+          </div>
+        </div>
+      </main>
     </div>
   )
+}
+
+function App() {
+  return <RouterProvider router={router} />
 }
 
 export default App

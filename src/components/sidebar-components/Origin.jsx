@@ -4,24 +4,24 @@ import { origins } from '../../data'
 
 const Origin = () => {
   return (
-    <div className='content'>
-      <h3>Origin</h3>
+    <div className='flex-grow'>
+      <h3 className='font-bold'>Origin</h3>
       <p className='subtitle'>Choose an origin</p>
-      <p>
+      <article className='text-balance '>
         To choose an Origin, a player can either select Random Origin or select
         from the provided list. Selecting an origin provides more details about
         it. You may also select the back button after selecting to return to
         this page.
-      </p>
-      <div className='origin-layout'>
-        <div className='origin-buttons'>
+      </article>
+      <div className='flex flex-col'>
+        <div>
           {origins.map((origin) => (
-            <div className='origin-container' key={origin.id}>
-              <button className='origin-text'>{origin.text}</button>
+            <div key={origin.id}>
+              <button>{origin.text}</button>
             </div>
           ))}
         </div>
-        <table className='origin-table'>
+        <table>
           <thead>
             <tr>
               <th>%</th>
@@ -58,9 +58,19 @@ const Origin = () => {
           </tbody>
         </table>
       </div>
-      <div className='navigation-links'>
-        <Link to='/'>Back</Link>
-        <Link to='/calibers'>Next</Link>
+      <div className='mt-auto flex justify-end pb-4 pr-4'>
+        <Link
+          to='/'
+          className='bg-sky-400 rounded-full border-gray-200 px-10 py-3 text-center	text-black hover:bg-yellow-950		 hover:text-red-100'
+        >
+          Back
+        </Link>
+        <Link
+          to='/'
+          className='bg-sky-400 rounded-full border-gray-200 px-10 py-3 text-center	text-black hover:bg-yellow-950		 hover:text-red-100'
+        >
+          Next
+        </Link>
       </div>
     </div>
   )
