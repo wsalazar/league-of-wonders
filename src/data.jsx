@@ -54,34 +54,30 @@ export const navigation = [
 export const origins = [
   {
     id: 1,
-    text: 'Random Caliber',
-  },
-  {
-    id: 2,
     text: 'Flux Agent',
     details:
       '<strong>Flux Agents</strong> are highly skilled in the use of firearms and explosives.',
   },
   {
-    id: 3,
+    id: 2,
     text: 'The Hue',
     details:
       '<strong>The Hue</strong> are highly skilled in the use of firearms and explosives.',
   },
   {
-    id: 4,
+    id: 3,
     text: 'Mythical',
     details:
       '<strong>Mythical</strong> are highly skilled in the use of firearms and explosives.',
   },
   {
-    id: 5,
+    id: 4,
     text: 'Lumen Fighter',
     details:
       '<strong>Lumen Fighter</strong> are highly skilled in the use of firearms and explosives.',
   },
   {
-    id: 6,
+    id: 5,
     text: 'Visionary',
     details:
       '<strong>Visionary</strong> are highly skilled in the use of firearms and explosives.',

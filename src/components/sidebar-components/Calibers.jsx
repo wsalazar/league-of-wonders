@@ -88,7 +88,7 @@ const Calibers = () => {
       </div>
       <div className='mt-20 flex justify-between items-center pb-4 px-4'>
         <Link
-          to='/'
+          to='/origin'
           className='
           bg-sky-400 
           rounded-full 
@@ -107,7 +107,7 @@ const Calibers = () => {
           {selectedCalibers.length} / 3 Selected
         </span>
         <Link
-          to='/calibers'
+          to='/aspects'
           className='
           bg-sky-400 
           rounded-full 

@@ -3,21 +3,25 @@ import { Link } from 'react-router-dom'
 import { origins } from '../../data'
 
 const Origin = () => {
-  const [activeOrigin, setActiveOrigin] = useState(null)
+  const getSelectedOrigin = () => {
+    return parseInt(localStorage.getItem('activeOrigin')) || null
+  }
 
-  const selectActiveOrigin = (index) => {
-    if (index + 1 == 1) {
+  const [activeOrigin, setActiveOrigin] = useState(getSelectedOrigin || null)
+
+  const setSelectedOrigin = (originId) => {
+    setActiveOrigin(originId)
+    localStorage.setItem('activeOrigin', originId)
+  }
+
+  const selectActiveOrigin = (originId) => {
+    if (originId === null) {
       let randomNumber = Math.random()
-      console.log(
-        origins.length - 1,
-        randomNumber,
-        Math.floor(randomNumber * (origins.length - 1)),
-        Math.floor(randomNumber * (origins.length - 1)) + 1
-      )
-      setActiveOrigin(Math.floor(randomNumber * (origins.length - 1)) + 1)
+      let randomOriginId = Math.floor(randomNumber * (origins.length + 1))
+      setSelectedOrigin(randomOriginId)
       return
     }
-    setActiveOrigin(index)
+    setSelectedOrigin(originId)
   }
 
   return (
@@ -32,6 +36,31 @@ const Origin = () => {
       </article>
       <div className='flex'>
         <div className='mt-5 mr-28'>
+          <button
+            className={`
+                  block p-3 
+                  rounded-lg border 
+                  border-gray-200 
+                  transition 
+                  duration-300 
+                  ease-in-out      
+                  border-none text-center
+                  text-white
+                  bg-yellow-950 
+                  hover:bg-yellow-custom 
+                  hover:text-red-100 
+                  active:text-red-100	
+                  active:bg-violet-700 
+                  focus:outline-none 
+                  focus:ring 
+                  focus:ring-violet-300
+                  m-2
+                  w-44
+              `}
+            onClick={() => selectActiveOrigin(null)}
+          >
+            Random Caliber
+          </button>
           {origins.map((origin, index) => (
             <div key={origin.id}>
               <button
@@ -54,9 +83,9 @@ const Origin = () => {
                   focus:ring-violet-300
                   m-2
                   w-44
-                  ${activeOrigin === index ? 'active-origin' : ''}
+                  ${activeOrigin === index + 1 ? 'active-origin' : ''}
               `}
-                onClick={() => selectActiveOrigin(index)}
+                onClick={() => selectActiveOrigin(origin.id)}
               >
                 {origin.text}
               </button>
@@ -67,7 +96,7 @@ const Origin = () => {
           <div>
             {origins.map((origin, index) => (
               <div key={origin.id}>
-                {activeOrigin === index && index !== null && (
+                {activeOrigin === index + 1 && index !== null && (
                   <div
                     className='p-5 bg-white h-10 overflow-y-scroll'
                     dangerouslySetInnerHTML={{ __html: origin.details }}
