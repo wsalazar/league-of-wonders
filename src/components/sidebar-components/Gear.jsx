@@ -18,7 +18,6 @@ const Gear = () => {
       <br />
       <br />
       <div className='primary-stats-layout'>
-        return (
         <div className='primary-stats-container'>
           <div className='primary-stats-container-header flex justify-between items-center'>
             <legend className='primary-stats-text'></legend>
@@ -28,7 +27,6 @@ const Gear = () => {
             style={{ textAlign: 'center' }}
           ></p>
         </div>
-        )
       </div>
       <div className='navigation-links'>
         <Link to='/aspects'>Back</Link>

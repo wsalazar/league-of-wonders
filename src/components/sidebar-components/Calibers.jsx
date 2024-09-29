@@ -22,8 +22,8 @@ const Calibers = () => {
   }
 
   return (
-    <div className='content'>
-      <h3>Calibers</h3>
+    <div className='flex-grow'>
+      <h3 className='font-bold uppercase'>Calibers</h3>
       <p className='subtitle'>Choose three Calibers</p>
       <p>
         CALIBERS define what acharacter is good at. All characters begin with{' '}
@@ -86,13 +86,42 @@ const Calibers = () => {
           </div>
         </div>
       </div>
-      Select Next at the bottom of the screen to continue
-      <div className='navigation-links'>
-        <Link to='/origin'>Back</Link>
+      <div className='mt-20 flex justify-between items-center pb-4 px-4'>
+        <Link
+          to='/'
+          className='
+          bg-sky-400 
+          rounded-full 
+          border-gray-200 
+          px-10 
+          py-3 
+          text-center	
+          text-black 
+          hover:bg-yellow-950
+          hover:text-red-100
+          '
+        >
+          Back
+        </Link>
         <span className='caliber-count'>
           {selectedCalibers.length} / 3 Selected
         </span>
-        <Link to='/aspects'>Next</Link>
+        <Link
+          to='/calibers'
+          className='
+          bg-sky-400 
+          rounded-full 
+          border-gray-200 
+          px-10 
+          py-3 
+          text-center	
+          text-black 
+          hover:bg-yellow-950
+          hover:text-red-100
+          '
+        >
+          Next
+        </Link>
       </div>
     </div>
   )

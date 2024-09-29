@@ -59,22 +59,32 @@ export const origins = [
   {
     id: 2,
     text: 'Flux Agent',
+    details:
+      '<strong>Flux Agents</strong> are highly skilled in the use of firearms and explosives.',
   },
   {
     id: 3,
     text: 'The Hue',
+    details:
+      '<strong>The Hue</strong> are highly skilled in the use of firearms and explosives.',
   },
   {
     id: 4,
     text: 'Mythical',
+    details:
+      '<strong>Mythical</strong> are highly skilled in the use of firearms and explosives.',
   },
   {
     id: 5,
     text: 'Lumen Fighter',
+    details:
+      '<strong>Lumen Fighter</strong> are highly skilled in the use of firearms and explosives.',
   },
   {
     id: 6,
     text: 'Visionary',
+    details:
+      '<strong>Visionary</strong> are highly skilled in the use of firearms and explosives.',
   },
 ]
 
