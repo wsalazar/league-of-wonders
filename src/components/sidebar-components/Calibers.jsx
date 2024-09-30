@@ -31,22 +31,22 @@ const Calibers = () => {
 
   const handleCaliberLimit = (e, caliberId) => {
     setSelectedCalibers((previousSelected) => {
-      if (previousSelected.length === 3) {
-        e.target.checked = false
-        toast.error('You can only select three calibers')
-      }
       if (previousSelected.includes(caliberId)) {
         const newSelected = previousSelected.filter(
           (caliber) => caliber !== caliberId
         )
         setActiveTab(newSelected.length - 1)
-        setChosenCalibers([...newSelected])
         setSelectedCaliberTab(newSelected.length - 1)
+        setChosenCalibers([...newSelected])
         return newSelected
       } else if (previousSelected.length < 3) {
         setSelectedCaliberTab(previousSelected.length)
         setChosenCalibers([...previousSelected, caliberId])
         return [...previousSelected, caliberId]
+      }
+      if (previousSelected.length === 3) {
+        e.target.checked = false
+        toast.error('You can only select three calibers')
       }
       setSelectedCaliberTab(activeTab)
       setChosenCalibers([...previousSelected])
