@@ -1,4 +1,6 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+
 import Sidebar from './components/Sidebar'
 import {
   Start,
@@ -40,6 +42,9 @@ function Root() {
         <div className='p-4 bg-orange-100 rounded-xl text-neutral-950 h-full'>
           <Outlet />
         </div>
+      </main>
+      <main>
+        <ToastContainer position='top-center' />
       </main>
     </div>
   )

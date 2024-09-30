@@ -17,7 +17,7 @@ const Origin = () => {
   const selectActiveOrigin = (originId) => {
     if (originId === null) {
       let randomNumber = Math.random()
-      let randomOriginId = Math.floor(randomNumber * (origins.length + 1))
+      let randomOriginId = Math.floor(randomNumber * (origins.length + 1)) + 1
       setSelectedOrigin(randomOriginId)
       return
     }
@@ -27,7 +27,7 @@ const Origin = () => {
   return (
     <div className='flex-grow'>
       <h3 className='font-bold uppercase'>Origin</h3>
-      <p className='subtitle uppercase'>Choose an origin</p>
+      <p className='subtitle'>Choose an origin</p>
       <article className='text-balance '>
         To choose an Origin, a player can either select Random Origin or select
         from the provided list. Selecting an origin provides more details about

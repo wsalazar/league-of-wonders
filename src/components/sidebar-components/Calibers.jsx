@@ -1,22 +1,55 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { calibers } from '../../data'
+import { toast } from 'react-toastify'
 
 const Calibers = () => {
-  const [selectedCalibers, setSelectedCalibers] = useState([])
-  const [activeTab, setActiveTab] = useState(0)
+  const getCalibers = () => {
+    return JSON.parse(localStorage.getItem('selectedCalibers')) || []
+  }
+
+  const getCaliberTab = () => {
+    return parseInt(localStorage.getItem('setCaliberTab')) || 0
+  }
+
+  const [selectedCalibers, setSelectedCalibers] = useState(getCalibers)
+  const [activeTab, setActiveTab] = useState(getCaliberTab || 0)
+
+  const setSelectedCaliberTab = (index) => {
+    setActiveTab(index)
+    localStorage.setItem('setCaliberTab', index)
+  }
+
+  const setChosenCalibers = (chosenCalibers) => {
+    localStorage.setItem('selectedCalibers', JSON.stringify(chosenCalibers))
+  }
+
+  const setSelectedActiveTab = (index) => {
+    setActiveTab(index)
+    localStorage.setItem('setCaliberTab', index)
+  }
 
   const handleCaliberLimit = (e, caliberId) => {
     setSelectedCalibers((previousSelected) => {
       if (previousSelected.length === 3) {
         e.target.checked = false
-        // set an alert or toastr saying that the max has been reached
+        toast.error('You can only select three calibers')
       }
       if (previousSelected.includes(caliberId)) {
-        return previousSelected.filter((caliber) => caliber !== caliberId)
+        const newSelected = previousSelected.filter(
+          (caliber) => caliber !== caliberId
+        )
+        setActiveTab(newSelected.length - 1)
+        setChosenCalibers([...newSelected])
+        setSelectedCaliberTab(newSelected.length - 1)
+        return newSelected
       } else if (previousSelected.length < 3) {
+        setSelectedCaliberTab(previousSelected.length)
+        setChosenCalibers([...previousSelected, caliberId])
         return [...previousSelected, caliberId]
       }
+      setSelectedCaliberTab(activeTab)
+      setChosenCalibers([...previousSelected])
       return previousSelected
     })
   }
@@ -25,64 +58,66 @@ const Calibers = () => {
     <div className='flex-grow'>
       <h3 className='font-bold uppercase'>Calibers</h3>
       <p className='subtitle'>Choose three Calibers</p>
-      <p>
+      <article className='text-balance '>
         CALIBERS define what acharacter is good at. All characters begin with{' '}
         <u>THREE</u> CALIBERS. When a new level is attained, the character must
         either increase the level of a known caliber or attain a new Caliber.
         The available CALIBERS are listed below:
-      </p>
-      <br />
-      <br />
-      <br />
-      <div className='caliber-layout'>
-        <div className='caliber-list-container'>
-          <div className='caliber-list'>
+      </article>
+      <div className='flex'>
+        <div className='mt-5 mr-40'>
+          <div className='overflow-y-scroll h-96 w-48 caliber-list-container text-white p-5 rounded-lg'>
             {calibers.map((caliber) => {
               return (
                 <div className='calibers' key={caliber.id}>
                   <label className='caliber-label'>
                     <input
                       type='checkbox'
-                      className='caliber-checkbox'
+                      checked={selectedCalibers.includes(caliber.id)}
                       onChange={(e) => handleCaliberLimit(e, caliber.id)}
                     />
-                    <span className='caliber-text'>{caliber.text}</span>
+                    <span className='pl-2'>{caliber.text}</span>
                   </label>
                 </div>
               )
             })}
           </div>
         </div>
-        <div className='caliber-details'>
+        <div className='w-auto mt-20 justify-center'>
           {selectedCalibers.length === 0 && (
             <textarea
               readOnly
               value='Select your first Caliber'
-              className='empty-textarea'
+              className='bg-white empty-textarea text-center text-black'
+              cols='60'
             />
           )}
           <div className='tabs'>
             {selectedCalibers.map((caliberId, index) => (
               <button
                 key={caliberId}
-                className={`tab ${activeTab === index ? 'active' : ''}`}
-                onClick={() => setActiveTab(index)}
+                className={`tab rounded-t-lg mr-5 p-2 text-black bg-white ${
+                  activeTab === index ? 'active-caliber' : ''
+                }`}
+                onClick={() => setSelectedActiveTab(index)}
               >
-                {calibers[caliberId - 1].text}
+                {calibers[parseInt(caliberId) - 1].text}
               </button>
             ))}
           </div>
           <div className='tab-content'>
-            {selectedCalibers.map((caliberId, index) => (
-              <textarea
-                key={caliberId}
-                className={`caliber-textarea ${
-                  activeTab === index ? 'active' : ''
-                }`}
-                readOnly
-                value={calibers[caliberId - 1].details}
-              />
-            ))}
+            {selectedCalibers.map(
+              (caliberId, index) =>
+                activeTab === index && (
+                  <textarea
+                    key={caliberId}
+                    className={`bg-white rounded-b-lg p-2`}
+                    readOnly
+                    value={calibers[parseInt(caliberId) - 1].details}
+                    cols='60'
+                  />
+                )
+            )}
           </div>
         </div>
       </div>
@@ -103,7 +138,7 @@ const Calibers = () => {
         >
           Back
         </Link>
-        <span className='caliber-count'>
+        <span className='caliber-count font-bold rounded-full p-2 w-40 text-center'>
           {selectedCalibers.length} / 3 Selected
         </span>
         <Link

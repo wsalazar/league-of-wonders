@@ -318,12 +318,7 @@ th {
   z-index: 1;
 }
 
-.caliber-count {
-  background-color: #eead67;
-  padding: 10px;
-  border-radius: 5rem;
-  color: black;
-}
+
 
 .aspect-container-header {
   display: flex;
@@ -410,6 +405,20 @@ p.aspect-details {
   padding: 8px;
   text-align: left;
 } */
+
+.caliber-count {
+  background-color: #eead67;
+}
+.tab {
+  border-right: outset;
+}
+.active-caliber {
+  background-color: #efd334;
+  color: black;
+}
+.caliber-list-container {
+  background-color: #433d36;
+}
 
 .active-menu-item {
   background-color: rgb(66 32 6 / var(--tw-bg-opacity));
