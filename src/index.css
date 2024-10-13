@@ -425,6 +425,9 @@ p.aspect-details {
   color: white;
 }
 
+.aspect-array {
+  width: 30rem;
+}
 .active-origin {
   background-color: #eead67;
   color: white;
@@ -432,4 +435,14 @@ p.aspect-details {
 .hover\:bg-yellow-custom:hover {
   --tw-bg-opacity: 1;
   background-color: #eead67;
+}
+
+.aspect-header {
+    display: flex;
+    background-color: #eead67;
+    padding: 10px;
+}
+
+.aspect-details {
+    background-color: #52aab1;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { origins } from '../../data'
+import NavigationButtons from "../NavigationButtons.jsx";
 
 const Origin = () => {
   const getSelectedOrigin = () => {
@@ -169,40 +170,7 @@ const Origin = () => {
           )}
         </div>
       </div>
-      <div className='mt-20 flex justify-between items-center pb-4 px-4'>
-        <Link
-          to='/'
-          className='
-          bg-sky-400 
-          rounded-full 
-          border-gray-200 
-          px-10 
-          py-3 
-          text-center	
-          text-black 
-          hover:bg-yellow-950
-          hover:text-red-100
-          '
-        >
-          Back
-        </Link>
-        <Link
-          to='/calibers'
-          className='
-          bg-sky-400 
-          rounded-full 
-          border-gray-200 
-          px-10 
-          py-3 
-          text-center	
-          text-black 
-          hover:bg-yellow-950
-          hover:text-red-100
-          '
-        >
-          Next
-        </Link>
-      </div>
+      <NavigationButtons backPath="/" nextPath="/calibers"/>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import NavigationButtons from "../NavigationButtons.jsx";
 
 const Start = () => {
   return (
@@ -24,14 +25,7 @@ const Start = () => {
       </ol>
       <br />
       Select Next at the bottom of the screen to continue
-      <div className='mt-auto flex justify-end pb-4 pr-4'>
-        <Link
-          to='/origin'
-          className='bg-sky-400 rounded-full border-gray-200 px-10 py-3 text-center	text-black hover:bg-yellow-950		 hover:text-red-100'
-        >
-          Next
-        </Link>
-      </div>
+    <NavigationButtons nextPath="/origin"/>
     </div>
   )
 }

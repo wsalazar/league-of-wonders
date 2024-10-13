@@ -254,10 +254,67 @@ export const primaryStats = [
   },
 ]
 
-export const weapons = [
+export const allWeapons = [
+
   {
     id: 1,
-    weapon: 'Saber',
+    label: 'Saber',
+  },
+  {
+    id: 2,
+    label: 'Dagger',
+  },
+  {
+    id: 3,
+    label: 'Knuckles',
+  },
+  {
+    id: 4,
+    label: 'Hand Crossbow',
+  },
+  {
+    id: 5,
+    label: 'Crossbow',
+  },
+  {
+    id: 6,
+    label: 'Staff',
+  },
+  {
+    id: 7,
+    label: 'Longsword',
+  },
+  {
+    id: 8,
+    label: 'Longbow',
+  },
+  {
+    id: 9,
+    label: 'Sphere',
+  },
+  {
+    id: 10,
+    label: 'Chakram',
+  },
+  {
+    id: 11,
+    label: 'Sling',
+  },
+]
+
+export const weapons = [
+  {
+    id: -1,
+    label: 'Please select a weapon',
+    hand: '',
+    weight: '',
+    effect: '',
+    hit: '',
+    range: '',
+  },
+  {
+    id: 1,
+    label: 'Saber',
     hand: 'One',
     weight: 'Light',
     effect: 'Strength Dice Slashing damage.',
@@ -266,7 +323,7 @@ export const weapons = [
   },
   {
     id: 2,
-    weapon: 'Dagger',
+    label: 'Dagger',
     hand: 'One',
     weight: 'Light',
     effect: 'Impulse Dice Piercing damage.',
@@ -275,7 +332,7 @@ export const weapons = [
   },
   {
     id: 3,
-    weapon: 'Knuckles',
+    label: 'Knuckles',
     hand: 'One',
     weight: 'Light',
     effect: 'Strength Dice Bludgeoning damage.',
@@ -284,7 +341,7 @@ export const weapons = [
   },
   {
     id: 4,
-    weapon: 'Hand Crossbow',
+    label: 'Hand Crossbow',
     hand: 'One',
     weight: 'Heavy',
     effect: 'Impulse Dice Piercing damage.',
@@ -293,7 +350,7 @@ export const weapons = [
   },
   {
     id: 5,
-    weapon: 'Crossbow',
+    label: 'Crossbow',
     hand: 'Two',
     weight: 'Heavy',
     effect: '2 + Impulse Dice Piercing damage.',
@@ -302,7 +359,7 @@ export const weapons = [
   },
   {
     id: 6,
-    weapon: 'Staff',
+    label: 'Staff',
     hand: 'Two',
     weight: 'Heavy',
     effect: '2 + Strength Dice Bludgeoning damage.',
@@ -311,7 +368,7 @@ export const weapons = [
   },
   {
     id: 7,
-    weapon: 'Longsword',
+    label: 'Longsword',
     hand: 'Two',
     weight: 'Heavy',
     effect: '4 + Strength Dice Slashing damage.',
@@ -320,7 +377,7 @@ export const weapons = [
   },
   {
     id: 8,
-    weapon: 'Longbow',
+    label: 'Longbow',
     hand: 'Two',
     weight: 'Heavy',
     effect: '4 + Impulse Dice Piercing damage.',
@@ -329,7 +386,7 @@ export const weapons = [
   },
   {
     id: 9,
-    weapon: 'Sphere',
+    label: 'Sphere',
     hand: 'One',
     weight: 'Heavy',
     effect: '4 + Impulse Dice Bludgeoning damage.',
@@ -338,7 +395,7 @@ export const weapons = [
   },
   {
     id: 10,
-    weapon: 'Chakram',
+    label: 'Chakram',
     hand: 'One',
     weight: 'Light',
     effect: '4 + Impulse Dice Slashing damage.',
@@ -347,7 +404,7 @@ export const weapons = [
   },
   {
     id: 11,
-    weapon: 'Sling',
+    label: 'Sling',
     hand: 'Two',
     weight: 'Light',
     effect: '2 + Strength Dice Bludgeoning damage.',
@@ -358,22 +415,28 @@ export const weapons = [
 
 export const armours = [
   {
+    id: -1,
+    label: 'Please select your armor',
+    slot: '',
+    weight: '',
+    effect: '',
+  },{
     id: 1,
-    armour: 'Leather Mask',
+    label: 'Leather Mask',
     slot: 'Head',
     weight: 'Light',
     effect: 'Reduces damage taken from critical hits by 6.',
   },
   {
     id: 2,
-    armour: 'Hooded Cloak',
+    label: 'Hooded Cloak',
     slot: 'Outerwear',
     weight: 'Light',
     effect: 'Reduces Bludgeoning, Piercing, and Slashing damage by 3.',
   },
   {
     id: 3,
-    armour: 'Armoured Cloak',
+    label: 'Armoured Cloak',
     slot: 'Outerwear',
     weight: 'Light',
     effect:
@@ -381,14 +444,14 @@ export const armours = [
   },
   {
     id: 4,
-    armour: 'Spandex Suit',
+    label: 'Spandex Suit',
     slot: 'Outerwear',
     weight: 'Light',
     effect: 'Reduces Fire, Electric, and Universal Damage by 3.',
   },
   {
     id: 5,
-    armour: 'Buckler',
+    label: 'Buckler',
     slot: 'One Hand',
     weight: 'Light',
     effect:
@@ -398,29 +461,36 @@ export const armours = [
 
 export const gadgets = [
   {
+    id: -1,
+    label: 'Please select your armor',
+    slot: '',
+    weight: '',
+    effect: '',
+  },
+  {
     id: 1,
-    gadget: 'Medicine Kit',
+    label: 'Medicine Kit',
     slot: 'Utility',
     effect:
       'Restores 1d10 Life to a target. This item has a total of 3uses before it breaks. Range: Adjacent; Action: Instant',
   },
   {
     id: 2,
-    gadget: 'Grappling Hook',
+    label: 'Grappling Hook',
     slot: 'Utility',
     effect:
       'Fire a grappling hook and line to a panel to pull yourself to that panel. This item can be used 3 times before breaking. Range: Far; Action: Instant',
   },
   {
     id: 3,
-    gadget: 'Smoke Bomb',
+    label: 'Smoke Bomb',
     slot: 'Utility',
     effect:
       'You obscure the panel you are on, inflicting a bane on all attacks made on and to that panel. After use the item breaks. Action: Instant',
   },
   {
     id: 4,
-    gadget: 'Low Power Grenade',
+    label: 'Low Power Grenade',
     slot: 'Utility',
     effect:
       'You throw a low powered grenade that deals 5 fire damage to all those on a nearby panel of your choice. Once used, this item is destroyed. Hit: IMPULSE; Range: Nearby; Action: Instant',

@@ -36,10 +36,10 @@ const router = createBrowserRouter([
 
 function Root() {
   return (
-    <div className='flex'>
+    <div className='flex '>
       <Sidebar />
-      <main className='p-4 w-4/5 flex-none'>
-        <div className='p-4 bg-orange-100 rounded-xl text-neutral-950 h-full'>
+      <main className='p-4  w-screen'>
+        <div className='p-4 bg-orange-100 rounded-xl text-neutral-950 '>
           <Outlet />
         </div>
       </main>

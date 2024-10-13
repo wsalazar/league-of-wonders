@@ -1,38 +1,99 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import NavigationButtons from "../NavigationButtons.jsx";
 
 const Gear = () => {
+
+    const selectedFirstWeapon = JSON.parse(localStorage.getItem('selectedFirstWeapon'))
+    const selectedSecondWeapon = JSON.parse(localStorage.getItem('selectedSecondWeapon'))
+    const selectedArmour = JSON.parse(localStorage.getItem('selectedArmour'))
+    const selectedGadget = JSON.parse(localStorage.getItem('selectedGadget'))
+
+    console.log(selectedFirstWeapon, selectedSecondWeapon, selectedArmour, selectedGadget)
   return (
-    <div className='content'>
-      <h3>Gear</h3>
-      <p className='subtitle'>Your Gear</p>
-      <p>
-        The Primary Stats are Resilience, Life, and Movement. Resilience
-        represents how much willpower the hero has, Life determines if a hero is
-        healthy, while movement determines how fast they are. The Primary Stats
-        are automatically calculated based on the Aspect allocation. Press next
-        if you like the values, or press back if you need to change your
-        Aspects.
-      </p>
-      <br />
-      <br />
-      <br />
-      <div className='primary-stats-layout'>
-        <div className='primary-stats-container'>
-          <div className='primary-stats-container-header flex justify-between items-center'>
-            <legend className='primary-stats-text'></legend>
+      <div className='flex-grow '>
+          <h3 className='font-bold uppercase'>Gear</h3>
+          <p className='subtitle mt-5'>Your Gear</p>
+          <article className='text-balance '>
+              Here are your selected Weapons, Armor and Gadget.
+          </article>
+          <br/>
+          <div className='grid grid-cols-3 gap-4 mt-5'>
+              <div className='flex flex-col h-44 mb-1'>
+                  <div
+                      className='w-full rounded-full  items-center flex justify-between'
+                      style={
+                          {
+                              backgroundColor: '#eead67',
+                              textAlign: 'center',
+                              background: '#eead67',
+                              padding: '10px',
+                          }}
+                  >
+                      <legend className='w-full font-bold'>
+                          Weapons
+                      </legend>
+                  </div>
+                  <article className='text-white h-36 flex items-center justify-center' style={
+                      {
+                          backgroundColor: '#b3512e',
+                          textAlign: 'center',
+                          background: '#b3512e',
+                      }}>
+                      {selectedFirstWeapon.label} <br/>
+                      {selectedSecondWeapon.label}
+
+                  </article>
+              </div>
+              <div className='flex flex-col h-44 mb-1'>
+                  <div
+                      className='w-full rounded-full  items-center flex justify-between'
+                      style={
+                          {
+                              backgroundColor: '#eead67',
+                              textAlign: 'center',
+                              background: '#eead67',
+                              padding: '10px',
+                          }}
+                  >
+                      <legend className='w-full font-bold'>
+                          Armour
+                      </legend>
+                  </div>
+                  <article className='text-white h-36 flex items-center justify-center' style={
+                      {
+                          backgroundColor: '#b3512e',
+                          textAlign: 'center',
+                          background: '#b3512e',
+                      }}>
+                      {selectedArmour.label}
+                  </article>
+              </div>
+              <div className='flex flex-col h-44 mb-1'>
+                  <div
+                      className='w-full rounded-full  items-center flex justify-between'
+                      style={
+                          {
+                              backgroundColor: '#eead67',
+                              textAlign: 'center',
+                              background: '#eead67',
+                              padding: '10px',
+                          }}
+                  >
+                      <legend className='w-full font-bold'>
+                          Gadget
+                      </legend>
+                  </div>
+                  <article className='text-white h-36 flex items-center justify-center' style={
+                      {
+                          backgroundColor: '#b3512e',
+                          textAlign: 'center',
+                          background: '#b3512e',
+                      }}>
+                      {selectedGadget.label}
+                  </article>
+              </div>
           </div>
-          <p
-            className='primary-stats-details'
-            style={{ textAlign: 'center' }}
-          ></p>
-        </div>
+          <NavigationButtons backPath="/gadget" nextPath="/summary"/>
       </div>
-      <div className='navigation-links'>
-        <Link to='/aspects'>Back</Link>
-        <Link to='/gear'>Next</Link>
-      </div>
-    </div>
   )
 }
 

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { calibers } from '../../data'
 import { toast } from 'react-toastify'
+import {useState} from 'react'
+import NavigationButtons from "../NavigationButtons.jsx";
 
 const Calibers = () => {
   const getCalibers = () => {
@@ -59,7 +60,7 @@ const Calibers = () => {
       <h3 className='font-bold uppercase'>Calibers</h3>
       <p className='subtitle'>Choose three Calibers</p>
       <article className='text-balance '>
-        CALIBERS define what acharacter is good at. All characters begin with{' '}
+        CALIBERS define what a character is good at. All characters begin with{' '}
         <u>THREE</u> CALIBERS. When a new level is attained, the character must
         either increase the level of a known caliber or attain a new Caliber.
         The available CALIBERS are listed below:
@@ -83,13 +84,14 @@ const Calibers = () => {
             })}
           </div>
         </div>
-        <div className='w-auto mt-20 justify-center'>
+        <div className='w-auto  flex items-center '>
           {selectedCalibers.length === 0 && (
             <textarea
               readOnly
-              value='Select your first Caliber'
-              className='bg-white empty-textarea text-center text-black'
+              value="Select your first Caliber"
               cols='60'
+              className="w-full bg-gray-100 text-gray-800 resize-none   text-center"
+
             />
           )}
           <div className='tabs'>
@@ -121,43 +123,7 @@ const Calibers = () => {
           </div>
         </div>
       </div>
-      <div className='mt-20 flex justify-between items-center pb-4 px-4'>
-        <Link
-          to='/origin'
-          className='
-          bg-sky-400 
-          rounded-full 
-          border-gray-200 
-          px-10 
-          py-3 
-          text-center	
-          text-black 
-          hover:bg-yellow-950
-          hover:text-red-100
-          '
-        >
-          Back
-        </Link>
-        <span className='caliber-count font-bold rounded-full p-2 w-40 text-center'>
-          {selectedCalibers.length} / 3 Selected
-        </span>
-        <Link
-          to='/aspects'
-          className='
-          bg-sky-400 
-          rounded-full 
-          border-gray-200 
-          px-10 
-          py-3 
-          text-center	
-          text-black 
-          hover:bg-yellow-950
-          hover:text-red-100
-          '
-        >
-          Next
-        </Link>
-      </div>
+      <NavigationButtons backPath="/origin" nextPath="/aspects"/>
     </div>
   )
 }
