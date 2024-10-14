@@ -1,67 +1,9 @@
-import { useState } from 'react'
 import { navigation } from '../data'
-
-// import {
-//   Start,
-//   Aspects,
-//   Calibers,
-//   Gear,
-//   PrimaryStats,
-//   Weapons,
-//   Gadget,
-//   Origin,
-//   Summary,
-//   Armour,
-// } from '../components'
-
-// import { Link, RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Start />,
-//   },
-//   {
-//     path: '/calibers',
-//     element: <Calibers />,
-//   },
-//   {
-//     path: '/aspects',
-//     element: <Aspects />,
-//   },
-//   {
-//     path: '/gear',
-//     element: <Gear />,
-//   },
-//   {
-//     path: '/primary-stats',
-//     element: <PrimaryStats />,
-//   },
-//   {
-//     path: '/weapons',
-//     element: <Weapons />,
-//   },
-//   {
-//     path: '/armour',
-//     element: <Armour />,
-//   },
-//   {
-//     path: '/gadget',
-//     element: <Gadget />,
-//   },
-//   {
-//     path: '/summary',
-//     element: <Summary />,
-//   },
-//   {
-//     path: '/origin',
-//     element: <Origin />,
-//   },
-// ])
+import {Link, useLocation} from 'react-router-dom'
 
 const Sidebar = () => {
-  const [activeMenuItem, setActiveMenuItem] = useState(0)
+    const menu = useLocation()
+
   return (
     <div className='w-64 flex-none h-screen bg-red-300 border-r border-gray-200'>
       <nav className='p-4 border-none border-0'>
@@ -87,13 +29,16 @@ const Sidebar = () => {
                     focus:outline-none 
                     focus:ring 
                     focus:ring-violet-300
-                    ${activeMenuItem === index ? 'active-menu-item' : ''}
+                    ${
+                      menu.pathname === nav.url
+                          ? 'active-menu-item'
+                          : ''
+                  }
                     `}
                   style={{
                     border: '2px solid #433d36',
                     borderRadius: '9999px',
                   }}
-                  onClick={() => setActiveMenuItem(index)}
                 >
                   {nav.text}
                 </Link>
@@ -102,18 +47,7 @@ const Sidebar = () => {
           })}
         </ul>
       </nav>
-      {/* <RouterProvider router={router} /> */}
     </div>
-
-    //   <aside>
-    // <ul style={{listStyleType: 'none', textAlign: 'left'}}>
-    //   {navigation.map((nav) => {
-    //     return (
-    //       <li key={nav.id}><a href={nav.url}>{nav.text}</a></li>
-    //     )
-    //   })}
-    // </ul>
-    // </aside>
   )
 }
 export default Sidebar

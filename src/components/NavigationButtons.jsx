@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 
 const NavigationButtons = ({ backPath , nextPath }) => {
+
   return (
     <div className={`mt-5 flex items-center pb-4 px-4 ${backPath ? 'justify-between' : 'justify-end'
     }`}>
-        { backPath &&<Link
+        { backPath &&
+        <Link
             to={backPath}
             className='
           bg-sky-400

@@ -7,7 +7,6 @@ const Gear = () => {
     const selectedArmour = JSON.parse(localStorage.getItem('selectedArmour'))
     const selectedGadget = JSON.parse(localStorage.getItem('selectedGadget'))
 
-    console.log(selectedFirstWeapon, selectedSecondWeapon, selectedArmour, selectedGadget)
   return (
       <div className='flex-grow '>
           <h3 className='font-bold uppercase'>Gear</h3>
