@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { calibers } from '../../data'
 import { toast } from 'react-toastify'
 import {useState} from 'react'

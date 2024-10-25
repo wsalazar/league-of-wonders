@@ -1,3 +1,84 @@
+import Select from "react-select";
+import {useState} from "react";
+
+const MythicalSelect = () => {
+  const selectedFirstWeapon = JSON.parse(localStorage.getItem('selectedFirstWeapon'))
+  const selectedSecondWeapon = JSON.parse(localStorage.getItem('selectedSecondWeapon'))
+
+  const options = [
+    selectedFirstWeapon,
+    selectedSecondWeapon,
+  ]
+  const getSelectedDivineWeapon = () => {
+    const selectedDivineWeapon = localStorage.getItem('selectedDivineWeapon')
+    if (selectedDivineWeapon) {
+      return JSON.parse(selectedDivineWeapon).value
+    }
+    return null
+  }
+
+  const [selectedDivineWeapon, setSelectedDivineWeapon] = useState(getSelectedDivineWeapon())
+
+  const handleSelectChange = (e) => {
+    const selectedValue = e.value
+    localStorage.setItem('selectedDivineWeapon', JSON.stringify({value: selectedValue}))
+    setSelectedDivineWeapon(selectedValue)
+  }
+
+  return <Select
+      defaultValue={null}
+      isClearable={true}
+      isSearchable={true}
+      name="fencer-weapon"
+      options={options}
+      placeholder='Select a divine weapon'
+      className='fencer-select overflow-visible'
+      onChange={(e) => handleSelectChange(e)}
+      value={options.find(opt => opt.value === selectedDivineWeapon)
+
+      }
+  />
+}
+
+const FencerSelect = () => {
+  const getSelectedFencerWeapon = () => {
+      const selectedFencerWeapon = localStorage.getItem('selectedFencerWeapon')
+      if (selectedFencerWeapon) {
+          return JSON.parse(selectedFencerWeapon).value
+      }
+      return null
+  }
+  const [selectedCaliber, setSelectedCaliber] = useState(getSelectedFencerWeapon())
+  const fencerWeaponOptions =
+      [
+        { value: 'saber', label: 'Saber', id: 1},
+        { value: 'dagger', label: 'Dagger', id: 2},
+        { value: 'longSword', label: 'Long Sword', id: 3},
+      ]
+  const handleSelectChange = (e) => {
+      const selectedValue = e.value
+      localStorage.setItem('selectedFencerWeapon', JSON.stringify({value: selectedValue}))
+      setSelectedCaliber(selectedValue)
+  }
+  return <Select
+      defaultValue={null}
+      isClearable={true}
+      isSearchable={true}
+      name="fencer-weapon"
+      options={[
+        { value: 'saber', label: 'Saber' },
+        { value: 'dagger', label: 'Dagger' },
+        { value: 'longSword', label: 'Long Sword' },
+      ]}
+      placeholder='Select a fencer weapon'
+      className='fencer-select overflow-visible'
+      onChange={(e) => handleSelectChange(e)}
+      value={fencerWeaponOptions.find(opt => opt.value === selectedCaliber)
+
+  }
+  />
+}
+
 export const navigation = [
   {
     id: 1,
@@ -69,6 +150,20 @@ export const origins = [
     text: 'Mythical',
     details:
       '<strong>Mythical</strong> are highly skilled in the use of firearms and explosives.',
+    levelDetails: () => (
+        <>
+            <h3 className="uppercase ">Abilities</h3>
+            <div style={{color:'#52aab1'}}><strong>Divine Weapon</strong></div>
+            Level 1<br/>
+            Choose any one weapon noted in the Gear section. The chosen weapon is now considered a Divine Weapon.
+            Divine Weapons can only <br/>
+            be wielded by their chosen MYTHICAL and are indestructible. The Mythical must pray to their deity for 3
+            hours to remove the Divine descriptor from one weapon and add it to another. Divine Weapons Inflict an
+            additional 3<br/>
+            Absolute Damage. <br/>
+            <MythicalSelect />
+        </>
+    )
   },
   {
     id: 4,
@@ -101,6 +196,15 @@ export const calibers = [
     text: 'Chronologer',
     details:
       'A Chronologer relies on their vast knowledge of time and imposing presence to manipulate their foes and support their allies.',
+    levelDetails: () => (
+        <>
+            <div style={{color:'#52aab1'}}><strong>FRACTURE</strong></div>
+            Level 1<br/>
+          You fracture the personal time of a target to<br/>
+          inflict MIND Dice universal damage to them.<br/>
+            <strong>Range</strong>: Nearby<br/><strong>Action</strong>: Instant
+        </>
+    )
   },
   {
     id: 4,
@@ -129,6 +233,18 @@ export const calibers = [
     id: 8,
     text: 'Fencer',
     details: 'You are proficient at using Sabers, daggers, and Long Swords.',
+    levelDetails: () => (
+        <>
+            <div style={{color:'#52aab1'}}><strong>EN GARDE</strong></div>
+            Level 1<br/>
+            When you use a Saber, Dagger, or Long Sword, you may add your Fencer Level to
+            the damage. Choose either a Saber, Dagger, or Long Sword to add to your
+            inventory. <br/>
+            <strong>Action</strong>: Passive <br/>
+            <FencerSelect />
+
+        </>
+    )
   },
   {
     id: 9,
@@ -178,6 +294,14 @@ export const calibers = [
     id: 17,
     text: 'Speedster',
     details: 'You are incredibly fast.',
+    levelDetails: () => (
+        <>
+            <div style={{color:'#52aab1'}}><strong>JOGGER</strong></div>
+            Level 1<br/>
+            You can move incredibly fast; your base Impulse is increased by 1.<br/>
+            <strong>Action</strong>: Passive
+        </>
+    )
   },
   {
     id: 18,

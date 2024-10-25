@@ -8,7 +8,7 @@ const Gear = () => {
     const selectedGadget = JSON.parse(localStorage.getItem('selectedGadget'))
 
   return (
-      <div className='flex-grow '>
+      <div className='flex-grow'>
           <h3 className='font-bold uppercase'>Gear</h3>
           <p className='subtitle mt-5'>Your Gear</p>
           <article className='text-balance '>

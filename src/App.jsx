@@ -36,16 +36,14 @@ const router = createBrowserRouter([
 
 function Root() {
   return (
-    <div className='flex '>
+    <div className='flex h-screen overflow-hidden'>
       <Sidebar />
-      <main className='p-4  w-screen'>
-        <div className='p-4 bg-orange-100 rounded-xl text-neutral-950 '>
+      <main className='flex-1 p-4 overflow-auto'>
+        <div className='h-full p-4 bg-orange-100 rounded-xl text-neutral-950'>
           <Outlet />
         </div>
       </main>
-      <main>
-        <ToastContainer position='top-center' />
-      </main>
+      <ToastContainer position='top-center' />
     </div>
   )
 }

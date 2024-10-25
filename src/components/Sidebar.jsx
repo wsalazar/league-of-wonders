@@ -5,7 +5,7 @@ const Sidebar = () => {
     const menu = useLocation()
 
   return (
-    <div className='w-64 flex-none h-screen bg-red-300 border-r border-gray-200'>
+    <div className='w-44 flex-none h-screen bg-red-300 border-r border-gray-200'>
       <nav className='p-4 border-none border-0'>
         <ul className='space-y-2 list-none'>
           {navigation.map((nav, index) => {
