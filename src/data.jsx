@@ -138,12 +138,46 @@ export const origins = [
     text: 'Flux Agent',
     details:
       '<strong>Flux Agents</strong> are highly skilled in the use of firearms and explosives.',
+    levelDetails: () => (
+        <></>
+    ),
+    questions: [
+        {
+            id: 1,
+            text: 'Why were you recruited to become a Flux Agent?',
+        },
+        {
+            id: 2,
+            text: 'When you became a Flux Agent what was the first Anomaly that you faced?',
+        },
+        {
+            id: 3,
+            text: 'Did you have a rival while training to be a Flux Agent? If so, who were they?',
+        },
+    ]
   },
   {
     id: 2,
     text: 'The Hue',
     details:
       '<strong>The Hue</strong> are highly skilled in the use of firearms and explosives.',
+    levelDetails: () => (
+        <></>
+    ),
+    questions: [
+      {
+        id: 1,
+        text: 'WWhy did you become a Hue? Was it an accident or were you deliberately chosen?',
+      },
+      {
+        id: 2,
+        text: 'When the Swarm speaks to you telepathically, what does it sound like? How does it make you feel?',
+      },
+      {
+        id: 3,
+        text: 'What event occurred when you first gained your Hue abilities?',
+      },
+    ]
   },
   {
     id: 3,
@@ -163,19 +197,67 @@ export const origins = [
             Absolute Damage. <br/>
             <MythicalSelect />
         </>
-    )
+    ),
+    questions: [
+      {
+        id: 1,
+        text: 'Who is your Deity? What do they represent to you?'
+      },
+      {
+        id: 2,
+        text: 'Why did your Deity choose you to become a Mythical? Did you accomplish a great task',
+      },
+      {
+        id: 3,
+        text: 'What is the relationship between you and your deity? Is it amenable or hostile?',
+      },
+    ]
   },
   {
     id: 4,
     text: 'Lumen Fighter',
     details:
       '<strong>Lumen Fighter</strong> are highly skilled in the use of firearms and explosives.',
+    levelDetails: () => (
+        <></>
+    ),
+    questions: [
+      {
+        id: 1,
+        text: 'When did you realize you had the ability to use your body’s natural aura?'
+      },
+      {
+        id: 2,
+        text: 'What happened when you first used your Aura?',
+      },
+      {
+        id: 3,
+        text: 'How did your best friend react when you told them you could use Aura?',
+      },
+    ]
   },
   {
     id: 5,
     text: 'Visionary',
     details:
       '<strong>Visionary</strong> are highly skilled in the use of firearms and explosives.',
+    levelDetails: () => (
+        <></>
+    ),
+    questions: [
+      {
+        id: 1,
+        text: 'When did you become a Visionary?'
+      },
+      {
+        id: 2,
+        text: 'When did you conjure your Figment?',
+      },
+      {
+        id: 3,
+        text: 'What does your figment look like?',
+      },
+    ]
   },
 ]
 
@@ -185,11 +267,17 @@ export const calibers = [
     text: 'Archer',
     details:
       'Archers use Longbows, Crossbows, and Hand-Crossbows to ensnare their targets and deal effective damage.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 2,
     text: 'Brawler',
     details: 'Trained in the art of unarmed combat and battle tactics.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 3,
@@ -211,23 +299,35 @@ export const calibers = [
     text: 'Clever',
     details:
       'A highly intelligent person who uses their mind to form plans and assess SITUATIONS.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 5,
     text: 'Defender',
     details:
       'Defenders are defensive combat experts who use their abilities to mitigate damage from not only themselves, but also their allies.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 6,
     text: 'Driver',
     details: 'You have a need, a need for speed!',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 7,
     text: 'Esper',
     details:
       'Empathic and telepathic beings. They can create illusions, read minds, and speak telepathically.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 8,
@@ -250,45 +350,69 @@ export const calibers = [
     id: 9,
     text: 'Forcer',
     details: 'You have the power of telekinesis.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 10,
     text: 'Gambler',
     details: 'You are incredibly lucky and bend probability to your whims.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 11,
     text: 'Glitter',
     details: 'You are amazingly beautiful, inside, and out, but mostly out.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 12,
     text: 'Improviser',
     details:
       'Improvisers are experts at turning mundane items into effective tools. They can defuse bombs with a piece of chewing gum or craft a communications device with a wire hanger.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 13,
     text: 'Inspirer',
     details:
       'Inspirers are the heart of the team. They motivate their allies to do their best and love to play a supportive role.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 14,
     text: 'Manifester',
     details:
       'Manifesters can create matter at will. Food, equipment, and creature creation are just a few examples.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 15,
     text: 'Mightier',
     details: 'You are strong, super strong even.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 16,
     text: 'Spacer',
     details:
       'Spacers use fast hand movements and hand signs akin to sign language to manipulate space to their will.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 17,
@@ -307,17 +431,26 @@ export const calibers = [
     id: 18,
     text: 'Tougher',
     details: 'You are incredibly tough.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 19,
     text: 'Tumbler',
     details:
       'Tumblers are acrobats, who can maneuver gracefully and narrowly escape harm.',
+    levelDetails: () => (
+        <></>
+    ),
   },
   {
     id: 20,
     text: 'Wrestler',
     details: 'Wrestlers are trained in the art of Strikes, throws, and holds.',
+    levelDetails: () => (
+        <></>
+    ),
   },
 ]
 
